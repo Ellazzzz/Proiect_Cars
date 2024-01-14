@@ -11,18 +11,34 @@ namespace Proiect_Cars
     {
         static void Main(string[] args)
         {
-            Car Ford = new Car("mustang", "blue", 2010, 220);
-            Car Opel = new Car("astra", "red", 2020, 180);
+            Car Ford = new Car("mustang", "blue", 2021, 220);
+            Car Opel = new Car("astra", "red", 2020, 180, "electric");
+            Car Volvo = new Car("xc90");
 
-            Console.WriteLine(Ford.name);
-            Console.WriteLine(Opel.year);
-            Console.WriteLine(Ford.color);
+            Console.WriteLine(Ford.Name);
+            Console.WriteLine(Opel.Year);
+            Console.WriteLine(Ford.Color);
+            Console.WriteLine(Ford.engine_type);
             Ford.fullThrottle();
+            Ford.honk();
 
-            Console.WriteLine(Opel.name);
-            Console.WriteLine(Opel.year);
-            Console.WriteLine(Ford.color);
+            Console.WriteLine(Opel.Name);
+            Console.WriteLine(Opel.Year);
+            Console.WriteLine(Ford.Color);
             Opel.fullThrottle();
+            Opel.honk();
+            Console.ReadKey();
+
+            Console.WriteLine("Enter Volvo's age = ");
+            try
+            {
+                Volvo.Year = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Volvo's age is " + Volvo.Year);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             Console.ReadKey();
         }
     }
